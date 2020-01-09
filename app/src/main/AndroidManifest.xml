@@ -9,6 +9,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".Views.Games">
+        </activity>
+        <activity android:name=".Views.Comment">
+        </activity>
+        <activity android:name=".Views.Request">
+        </activity>
+        <activity android:name=".Views.UserInfo">
+        </activity>
         <activity android:name=".Views.PasswordChange">
         </activity>
         <activity android:name=".Views.MainPage">

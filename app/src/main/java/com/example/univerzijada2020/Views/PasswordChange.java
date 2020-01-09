@@ -39,6 +39,8 @@ public class PasswordChange extends AppCompatActivity {
                     boolean success = User.changePass(oldPass, newPass);
                     if(success){
                         Toast.makeText(getApplicationContext(), "Uspeh: Lozinka je uspesno promenjena!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(PasswordChange.this, MainPage.class);
+                        startActivity(intent);
                     }
                     else{
                         Toast.makeText(getApplicationContext(), "Greska: Stara lozinka je netacna!", Toast.LENGTH_LONG).show();

@@ -1,33 +1,30 @@
-[
+{
+"users": [
   {
-    "id": "0",
     "name":"Zoran",
     "surname":"Milicevic",
     "telephone":"0631768402",
     "address":"Vojvode stepe 186",
     "username":"zoki",
-    "password":"zokiuzina",
-    "isAdmin":false
+    "password":"zokiuzina"
   },
   {
-    "id": "1",
     "name":"Zika",
     "surname":"Zivkovic",
     "telephone":"0631768402",
     "address":"Vojvode stepe 190",
     "username":"zile",
-    "password":"zika123",
-    "isAdmin":false
+    "password":"zika123"
   },
   {
-    "id": "2",
     "name":"Petar",
     "surname":"Petrovic",
     "telephone":"0631768402",
     "address":"Vojvode stepe 190",
-    "username":"admin",
-    "password":"admin123",
-    "isAdmin":true
+    "username":"pera",
+    "password":"pera123"
   }
 ]
+}
+
 

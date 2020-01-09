@@ -1,5 +1,13 @@
 package com.example.univerzijada2020.Data;
 
+import android.content.Context;
+import android.util.JsonReader;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.*;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class User {
@@ -10,14 +18,39 @@ public class User {
     private String username;
     private String password;
 
-    public static ArrayList<User> users= initialiseUsers();
+    public static ArrayList<User> users;
     public static User currentUser;
 
-    public static ArrayList<User> initialiseUsers() {
-        if (users == null) {
-            users = new ArrayList<User>();
-            users.add(new User("Zoran", "Milicevic", "0631768402", "Vojvode Stepe 186", "zokimili", "zokiuzina"));
+    public static ArrayList<User> initialiseUsers(Context c) {
+        try {
+            InputStream is = c.getAssets().open("users.json");
+            BufferedReader bfr = new BufferedReader(new InputStreamReader(is));
+            String jsonContent="";
+            String line;
+
+            while((line = bfr.readLine())!=null){
+                jsonContent+=line;
+            }
+
+            User.users = new ArrayList<>();
+            JSONObject users = new JSONObject(jsonContent);
+            JSONArray usersArray = users.getJSONArray("users");
+
+            for(int i=0; i<usersArray.length(); i++){
+                JSONObject user = usersArray.getJSONObject(i);
+                User.users.add(new User(user.getString("name"), user.getString("surname"),
+                        user.getString("telephone"), user.getString("address"),
+                        user.getString("username"), user.getString("password")));
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+
         return users;
     }
 
@@ -42,6 +75,14 @@ public class User {
         }
 
         return false;
+    }
+
+    public static boolean updateUserInfo(String name, String surname, String telephone, String address){
+        currentUser.setName(name);
+        currentUser.setSurname(surname);
+        currentUser.setTelephone(telephone);
+        currentUser.setAddress(address);
+        return true;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
