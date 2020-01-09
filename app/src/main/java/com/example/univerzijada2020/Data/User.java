@@ -1,13 +1,11 @@
 package com.example.univerzijada2020.Data;
 
 import android.content.Context;
-import android.util.JsonReader;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class User {

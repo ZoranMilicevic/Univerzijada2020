@@ -186,9 +186,11 @@
             android:layout_marginTop="395dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="132dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="45dp" android:layout_marginEnd="46dp" app:layout_constraintEnd_toEndOf="parent"
+            android:stretchColumns="1,2,3"
     >
 
 
     </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

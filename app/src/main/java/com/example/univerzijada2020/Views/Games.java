@@ -1,6 +1,5 @@
 package com.example.univerzijada2020.Views;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.View;
@@ -72,7 +71,7 @@ public class Games extends AppCompatActivity {
 
     public void fillTable(ArrayList<Game> games, TableLayout g){
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        ViewGroup.LayoutParams lp = new TableLayout.LayoutParams(200, 50);
+        ViewGroup.LayoutParams lp = new TableLayout.LayoutParams(100, 50);
         g.removeAllViews();
 
         TableRow tr1 = new TableRow(this);
@@ -81,16 +80,19 @@ public class Games extends AppCompatActivity {
         date1.setTextColor(Color.BLACK);
         date1.setTextSize(16);
         date1.setTypeface(null, Typeface.BOLD);
+        date1.setLayoutParams(new TableRow.LayoutParams(1));
 
         TextView time1 = new TextView(this);
         time1.setTextColor(Color.BLACK);
         time1.setTextSize(16);
         time1.setTypeface(null, Typeface.BOLD);
+        time1.setLayoutParams(new TableRow.LayoutParams(2));
 
         TextView stadium1 = new TextView(this);
         stadium1.setTextColor(Color.BLACK);
         stadium1.setTextSize(16);
         stadium1.setTypeface(null, Typeface.BOLD);
+        stadium1.setLayoutParams(new TableRow.LayoutParams(3));
 
         date1.setText("Datum");
         time1.setText("Vreme");
@@ -107,14 +109,17 @@ public class Games extends AppCompatActivity {
             TextView date = new TextView(this);
             date.setTextColor(Color.BLACK);
             date.setTextSize(16);
+            date.setLayoutParams(new TableRow.LayoutParams(1));
 
             TextView time = new TextView(this);
             time.setTextColor(Color.BLACK);
             time.setTextSize(16);
+            time.setLayoutParams(new TableRow.LayoutParams(2));
 
             TextView stadium = new TextView(this);
             stadium.setTextColor(Color.BLACK);
             stadium.setTextSize(16);
+            stadium.setLayoutParams(new TableRow.LayoutParams(3));
 
             date.setText(dateFormat.format(game.getDate()));
             time.setText(game.getTime());
