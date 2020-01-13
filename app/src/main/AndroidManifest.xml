@@ -9,6 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".Views.AccomodationInfo">
+        </activity>
+        <activity android:name=".Views.Kalemegdan">
+        </activity>
+        <activity android:name=".Views.TouristInfo">
+        </activity>
         <activity android:name=".Views.Games">
         </activity>
         <activity android:name=".Views.Comment">

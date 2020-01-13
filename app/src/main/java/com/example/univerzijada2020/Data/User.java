@@ -19,36 +19,12 @@ public class User {
     public static ArrayList<User> users;
     public static User currentUser;
 
-    public static ArrayList<User> initialiseUsers(Context c) {
-        try {
-            InputStream is = c.getAssets().open("users.json");
-            BufferedReader bfr = new BufferedReader(new InputStreamReader(is));
-            String jsonContent="";
-            String line;
-
-            while((line = bfr.readLine())!=null){
-                jsonContent+=line;
-            }
-
-            User.users = new ArrayList<>();
-            JSONObject users = new JSONObject(jsonContent);
-            JSONArray usersArray = users.getJSONArray("users");
-
-            for(int i=0; i<usersArray.length(); i++){
-                JSONObject user = usersArray.getJSONObject(i);
-                User.users.add(new User(user.getString("name"), user.getString("surname"),
-                        user.getString("telephone"), user.getString("address"),
-                        user.getString("username"), user.getString("password")));
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
+    public static ArrayList<User> initialiseUsers() {
+        if(users == null) {
+            users = new ArrayList<>();
+            users.add(new User("Zoran", "Milicevic", "0631768402", "Vojvode Stepe 186", "zoki", "zokiuzina"));
+            users.add(new User("Zika", "Zivkovic", "0631768402", "Vojvode stepe 190", "zika", "zika123"));
         }
-
         return users;
     }
 

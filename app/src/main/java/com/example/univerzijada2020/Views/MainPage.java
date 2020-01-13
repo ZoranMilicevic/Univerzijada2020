@@ -38,7 +38,7 @@ public class MainPage extends AppCompatActivity {
         final Button accomodationButton = findViewById(R.id.accomodation);
         accomodationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainPage.this, MainActivity.class);
+                Intent intent = new Intent(MainPage.this, AccomodationInfo.class);
                 startActivity(intent);
             }
         });
@@ -54,7 +54,7 @@ public class MainPage extends AppCompatActivity {
         final Button touristButton = findViewById(R.id.tourist);
         touristButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainPage.this, MainActivity.class);
+                Intent intent = new Intent(MainPage.this, TouristInfo.class);
                 startActivity(intent);
             }
         });

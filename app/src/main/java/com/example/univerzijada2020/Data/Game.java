@@ -25,6 +25,16 @@ public class Game {
         date = new GregorianCalendar(2020, Calendar.JUNE, 24).getTime();
         games.add(new Game("zoki", date, "18:00", "Rajko Mitic"));
 
+
+        date = new GregorianCalendar(2020, Calendar.JUNE, 18).getTime();
+        games.add(new Game("zika", date, "13:30", "Arena"));
+
+        date = new GregorianCalendar(2020, Calendar.JULY, 27).getTime();
+        games.add(new Game("zika", date, "14:30", "Omladinski"));
+
+        date = new GregorianCalendar(2020, Calendar.JUNE, 8).getTime();
+        games.add(new Game("zika", date, "15:00", "JNA"));
+
     }
 
     public static ArrayList<Game> getGamesUser(){
